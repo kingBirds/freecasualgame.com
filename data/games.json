@@ -6,7 +6,7 @@
         "category": "action",
         "iframe": "https://www.crazygames.com/embed/grand-escape-prison",
         "popularity": 95,
-        "image": "https://img.gamedistribution.com/d684c36172194e42aa6c7e99fde303ef-512x384.jpg"
+        "image": "https://img.gamedistribution.com/d684c36172194e42aa6c7e99fde303ef-512x512.jpg"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "category": "puzzle",
         "iframe": "https://www.crazygames.com/embed/bubble-shooter-extreme",
         "popularity": 87,
-        "image": "https://html5.gamedistribution.com/2d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3a/thumbnail.jpg"
+        "image": "https://img.gamedistribution.com/2d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3a-512x512.jpg"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "category": "sports",
         "iframe": "https://www.crazygames.com/embed/turbo-racing-3d",
         "popularity": 92,
-        "image": "https://html5.gamedistribution.com/5d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3a/thumbnail.jpg"
+        "image": "https://img.gamedistribution.com/5d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3a-512x512.jpg"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "category": "multiplayer",
         "iframe": "https://www.crazygames.com/embed/battle-royale-arena",
         "popularity": 98,
-        "image": "https://html5.gamedistribution.com/8d1d8b4c5b9e4f1a4f3a0a8d3a2d5d5d/thumbnail.jpg"
+        "image": "https://img.gamedistribution.com/8d1d8b4c5b9e4f1a4f3a0a8d3a2d5d5d-512x512.jpg"
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "category": "puzzle",
         "iframe": "https://www.crazygames.com/embed/magic-puzzle-adventure",
         "popularity": 84,
-        "image": "https://html5.gamedistribution.com/1d8b4c5b9e4f1a4f3a0a8d3a5d5d5d8d/thumbnail.jpg"
+        "image": "https://img.gamedistribution.com/1d8b4c5b9e4f1a4f3a0a8d3a5d5d5d8d-512x512.jpg"
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "category": "action",
         "iframe": "https://www.crazygames.com/embed/jungle-explorer",
         "popularity": 89,
-        "image": "https://html5.gamedistribution.com/4c5b9e4f1a4f3a0a8d3a8d1d5d5d5d8d/thumbnail.jpg"
+        "image": "https://img.gamedistribution.com/4c5b9e4f1a4f3a0a8d3a8d1d5d5d5d8d-512x512.jpg"
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "category": "sports",
         "iframe": "https://www.crazygames.com/embed/cartoon-soccer",
         "popularity": 82,
-        "image": "https://html5.gamedistribution.com/9e4f1a4f3a0a8d3a2d5d5d5d8d1d8b4c/thumbnail.jpg"
+        "image": "https://img.gamedistribution.com/9e4f1a4f3a0a8d3a2d5d5d5d8d1d8b4c-512x512.jpg"
     },
     {
         "id": 8,
@@ -69,6 +69,6 @@
         "category": "kids",
         "iframe": "https://www.crazygames.com/embed/animal-kindergarten",
         "popularity": 78,
-        "image": "https://html5.gamedistribution.com/a4f3a0a8d3a5d5d5d8d1d8b4c5b9e4f/thumbnail.jpg"
+        "image": "https://img.gamedistribution.com/a4f3a0a8d3a5d5d5d8d1d8b4c5b9e4f-512x512.jpg"
     }
 ]
