@@ -89,6 +89,20 @@
             font-size: 12px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .game-image-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .game-image-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -140,7 +154,7 @@
             <div id="games-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <!-- 骨架屏加载状态 -->
                 <div class="game-card skeleton bg-white rounded-xl shadow overflow-hidden relative">
-                    <div class="relative">
+                    <div class="game-image-container">
                         <div class="bg-gray-200 w-full h-48"></div>
                     </div>
                     <div class="p-4">
@@ -153,7 +167,7 @@
                 </div>
                 <!-- 重复骨架屏 -->
                 <div class="game-card skeleton bg-white rounded-xl shadow overflow-hidden relative">
-                    <div class="relative">
+                    <div class="game-image-container">
                         <div class="bg-gray-200 w-full h-48"></div>
                     </div>
                     <div class="p-4">
@@ -165,7 +179,7 @@
                     </div>
                 </div>
                 <div class="game-card skeleton bg-white rounded-xl shadow overflow-hidden relative hidden sm:block">
-                    <div class="relative">
+                    <div class="game-image-container">
                         <div class="bg-gray-200 w-full h-48"></div>
                     </div>
                     <div class="p-4">
@@ -177,7 +191,7 @@
                     </div>
                 </div>
                 <div class="game-card skeleton bg-white rounded-xl shadow overflow-hidden relative hidden lg:block">
-                    <div class="relative">
+                    <div class="game-image-container">
                         <div class="bg-gray-200 w-full h-48"></div>
                     </div>
                     <div class="p-4">
@@ -246,8 +260,8 @@
                 const card = document.createElement('div');
                 card.className = 'game-card bg-white rounded-xl shadow overflow-hidden relative';
                 card.innerHTML = `
-                    <div class="relative">
-                        <img src="${game.image}" alt="${game.title}" class="game-image rounded-t-xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x192/0071e3/ffffff?text=Game+Image'">
+                    <div class="game-image-container">
+                        <img src="${game.image}" alt="${game.title}" class="game-image" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x192/0071e3/ffffff?text=Game+Image'">
                         <div class="popular-badge">
                             ${game.popularity}% Popular
                         </div>
