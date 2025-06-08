@@ -22,6 +22,13 @@
         }
     </script>
     <style>
+        .game-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
         .game-card:hover .game-description {
             opacity: 1;
             transform: translateY(0);
@@ -46,9 +53,6 @@
             color: #0071e3;
             border-left: 3px solid #0071e3;
         }
-        .game-iframe {
-            transition: all 0.3s ease;
-        }
         .modal-overlay {
             background-color: rgba(0, 0, 0, 0.8);
         }
@@ -67,6 +71,23 @@
             .sidebar.active {
                 transform: translateX(0);
             }
+        }
+        .game-image {
+            height: 192px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .popular-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 0 0 0 12px;
+            font-weight: bold;
+            font-size: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -111,14 +132,14 @@
         <!-- 主内容区 -->
         <main class="flex-1">
             <div class="mb-6">
-                <h2 class="text-2xl font-bold text-gray-800 mb-2">Popular Games</h2>
-                <p class="text-gray-600">Discover the most played games this week</p>
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Featured Games</h2>
+                <p class="text-gray-600">Discover our hand-picked selection of top games</p>
             </div>
 
             <!-- 游戏列表 -->
             <div id="games-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <!-- 骨架屏加载状态 -->
-                <div class="game-card skeleton bg-white rounded-xl shadow-md overflow-hidden relative">
+                <div class="game-card skeleton bg-white rounded-xl shadow overflow-hidden relative">
                     <div class="relative">
                         <div class="bg-gray-200 w-full h-48"></div>
                     </div>
@@ -131,7 +152,7 @@
                     </div>
                 </div>
                 <!-- 重复骨架屏 -->
-                <div class="game-card skeleton bg-white rounded-xl shadow-md overflow-hidden relative">
+                <div class="game-card skeleton bg-white rounded-xl shadow overflow-hidden relative">
                     <div class="relative">
                         <div class="bg-gray-200 w-full h-48"></div>
                     </div>
@@ -143,7 +164,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="game-card skeleton bg-white rounded-xl shadow-md overflow-hidden relative hidden sm:block">
+                <div class="game-card skeleton bg-white rounded-xl shadow overflow-hidden relative hidden sm:block">
                     <div class="relative">
                         <div class="bg-gray-200 w-full h-48"></div>
                     </div>
@@ -155,7 +176,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="game-card skeleton bg-white rounded-xl shadow-md overflow-hidden relative hidden lg:block">
+                <div class="game-card skeleton bg-white rounded-xl shadow overflow-hidden relative hidden lg:block">
                     <div class="relative">
                         <div class="bg-gray-200 w-full h-48"></div>
                     </div>
@@ -191,7 +212,6 @@
         </div>
     </div>
 
-    <!-- 数据文件路径 -->
     <script>
         // DOM元素
         const gamesContainer = document.getElementById('games-container');
@@ -224,11 +244,11 @@
             
             gamesArray.forEach(game => {
                 const card = document.createElement('div');
-                card.className = 'game-card bg-white rounded-xl shadow-md overflow-hidden relative';
+                card.className = 'game-card bg-white rounded-xl shadow overflow-hidden relative';
                 card.innerHTML = `
                     <div class="relative">
-                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48"></div>
-                        <div class="absolute top-0 right-0 bg-primary text-white px-2 py-1 rounded-bl-lg text-sm font-bold">
+                        <img src="${game.image}" alt="${game.title}" class="game-image rounded-t-xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x192/0071e3/ffffff?text=Game+Image'">
+                        <div class="popular-badge">
                             ${game.popularity}% Popular
                         </div>
                     </div>
