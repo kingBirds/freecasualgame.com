@@ -3,73 +3,120 @@
         "id": 1,
         "title": "Grand Escape Prison",
         "description": "Plan your escape from a high-security prison in this thrilling adventure. Avoid guards, solve puzzles, and find your way to freedom!",
-        "category": "action",
-        "Tag":"1player、3d ",
+        "category": "Action",
         "iframe": "https://www.crazygames.com/embed/grand-escape-prison",
         "popularity": 95,
-        "image": "https://img.gamedistribution.com/d684c36172194e42aa6c7e99fde303ef-512x512.jpg"
+        "image": "https://img.gamedistribution.com/d684c36172194e42aa6c7e99fde303ef-512x512.jpg",
+        "tags": ["1 Player", "3D", "Adventure", "Puzzle"]
     },
     {
         "id": 2,
         "title": "Bubble Shooter Extreme",
         "description": "Match colorful bubbles in this addictive puzzle game. Clear the board with strategic shots and earn high scores!",
-        "category": "puzzle",
+        "category": "Classic",
         "iframe": "https://www.crazygames.com/embed/bubble-shooter-extreme",
         "popularity": 87,
-        "image": "https://img.gamedistribution.com/2d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3a-512x512.jpg"
+        "image": "https://img.gamedistribution.com/2d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3a-512x512.jpg",
+        "tags": ["1 Player", "Arcade", "Puzzle", "Casual"]
     },
     {
         "id": 3,
         "title": "Turbo Racing 3D",
         "description": "Experience high-speed racing on challenging tracks. Customize your car, compete with players worldwide, and become the champion!",
-        "category": "sports",
+        "category": "Racing",
         "iframe": "https://www.crazygames.com/embed/turbo-racing-3d",
         "popularity": 92,
-        "image": "https://img.gamedistribution.com/5d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3a-512x512.jpg"
+        "image": "https://img.gamedistribution.com/5d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3a-512x512.jpg",
+        "tags": ["Racing", "3D", "Car", "Multiplayer"]
     },
     {
         "id": 4,
         "title": "Battle Royale Arena",
         "description": "Join 50-player online battles. Collect weapons, build defenses, and be the last one standing in this multiplayer showdown!",
-        "category": "multiplayer",
+        "category": "Action",
         "iframe": "https://www.crazygames.com/embed/battle-royale-arena",
         "popularity": 98,
-        "image": "https://img.gamedistribution.com/8d1d8b4c5b9e4f1a4f3a0a8d3a2d5d5d-512x512.jpg"
+        "image": "https://img.gamedistribution.com/8d1d8b4c5b9e4f1a4f3a0a8d3a2d5d5d-512x512.jpg",
+        "tags": ["Multiplayer", "Shooter", "3D", "Action"]
     },
     {
         "id": 5,
         "title": "Magic Puzzle Adventure",
         "description": "Solve magical puzzles in a fantasy world. Help the wizard restore peace to the kingdom with your problem-solving skills.",
-        "category": "puzzle",
+        "category": "Adventure",
         "iframe": "https://www.crazygames.com/embed/magic-puzzle-adventure",
         "popularity": 84,
-        "image": "https://img.gamedistribution.com/1d8b4c5b9e4f1a4f3a0a8d3a5d5d5d8d-512x512.jpg"
+        "image": "https://img.gamedistribution.com/1d8b4c5b9e4f1a4f3a0a8d3a5d5d5d8d-512x512.jpg",
+        "tags": ["Puzzle", "Adventure", "1 Player", "Fantasy"]
     },
     {
         "id": 6,
         "title": "Jungle Explorer",
         "description": "Navigate through dangerous jungles, discover ancient ruins, and find hidden treasures in this exciting adventure game.",
-        "category": "action",
+        "category": "Adventure",
         "iframe": "https://www.crazygames.com/embed/jungle-explorer",
         "popularity": 89,
-        "image": "https://img.gamedistribution.com/4c5b9e4f1a4f3a0a8d3a8d1d5d5d5d8d-512x512.jpg"
+        "image": "https://img.gamedistribution.com/4c5b9e4f1a4f3a0a8d3a8d1d5d5d5d8d-512x512.jpg",
+        "tags": ["Adventure", "Exploration", "1 Player", "3D"]
     },
     {
         "id": 7,
         "title": "Cartoon Soccer",
         "description": "Fun soccer game with cartoon characters. Play with friends or against AI in this family-friendly sports game.",
-        "category": "sports",
+        "category": "Football",
         "iframe": "https://www.crazygames.com/embed/cartoon-soccer",
         "popularity": 82,
-        "image": "https://img.gamedistribution.com/9e4f1a4f3a0a8d3a2d5d5d5d8d1d8b4c-512x512.jpg"
+        "image": "https://img.gamedistribution.com/9e4f1a4f3a0a8d3a2d5d5d5d8d1d8b4c-512x512.jpg",
+        "tags": ["Sports", "Multiplayer", "Football", "Casual"]
     },
     {
         "id": 8,
         "title": "Animal Kindergarten",
         "description": "Educational game for kids. Help cute animals learn numbers, letters, and basic skills in this fun kindergarten simulator.",
-        "category": "kids",
+        "category": "Kids",
         "iframe": "https://www.crazygames.com/embed/animal-kindergarten",
         "popularity": 78,
-        "image": "https://img.gamedistribution.com/a4f3a0a8d3a5d5d5d8d1d8b4c5b9e4f-512x512.jpg"
+        "image": "https://img.gamedistribution.com/a4f3a0a8d3a5d5d5d8d1d8b4c5b9e4f-512x512.jpg",
+        "tags": ["Kids", "Educational", "1 Player", "Animals"]
+    },
+    {
+        "id": 9,
+        "title": "Super Mario World",
+        "description": "Join Mario on his classic adventure to rescue Princess Peach from Bowser's castle in this timeless platformer.",
+        "category": "Mario Bros",
+        "iframe": "https://www.crazygames.com/embed/super-mario-world",
+        "popularity": 96,
+        "image": "https://img.gamedistribution.com/7d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3a-512x512.jpg",
+        "tags": ["Platformer", "Classic", "1 Player", "Adventure"]
+    },
+    {
+        "id": 10,
+        "title": "Pokemon Battle Arena",
+        "description": "Battle with your favorite Pokemon in this exciting turn-based strategy game. Collect, train, and become the ultimate Pokemon master!",
+        "category": "Pokemon",
+        "iframe": "https://www.crazygames.com/embed/pokemon-battle-arena",
+        "popularity": 91,
+        "image": "https://img.gamedistribution.com/3a0a8d3a5d5d5d8d1d8b4c5b9e4f1a4f-512x512.jpg",
+        "tags": ["Strategy", "Turn-based", "RPG", "Collectible"]
+    },
+    {
+        "id": 11,
+        "title": "Virtual Poker Night",
+        "description": "Join a virtual poker table and play with friends or players from around the world. Test your bluffing skills and win big!",
+        "category": "Cards",
+        "iframe": "https://www.crazygames.com/embed/virtual-poker-night",
+        "popularity": 85,
+        "image": "https://img.gamedistribution.com/5d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3b-512x512.jpg",
+        "tags": ["Cards", "Multiplayer", "Strategy", "Casino"]
+    },
+    {
+        "id": 12,
+        "title": "Fashion Showdown",
+        "description": "Create stunning outfits for models and compete in fashion challenges. Become the top stylist in the city!",
+        "category": "Dress Up",
+        "iframe": "https://www.crazygames.com/embed/fashion-showdown",
+        "popularity": 80,
+        "image": "https://img.gamedistribution.com/4f1a4f3a0a8d3a5d5d5d8d1d8b4c5b9e-512x512.jpg",
+        "tags": ["Dress Up", "Creative", "Fashion", "1 Player"]
     }
 ]
