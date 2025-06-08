@@ -17,18 +17,17 @@
         "iframe": "https://www.onlinegames.io/games/2021/3/love-tester/index.html",
         "popularity": 95,
         "image": "https://www.onlinegames.io/media/posts/152/responsive/love-tester-lg.jpg",
-        "tags": ["1 Player", "2D", "Funny", ]
+        "tags": ["1 Player", "2D", "Funny" ]
     },
     {
         "id": 3,
         "title": "Turbo Racing 3D",
-        "description": "Real Flight Simulator is a realistic game that gives you the ultimate flight experience.
-There is the possibility to choose the aircraft you want and start to control the plane.",
-        "category": "Racing",
+        "description": "Real Flight Simulator is a realistic game that gives you the ultimate flight experience.There is the possibility to choose the aircraft you want and start to control the plane.",
+        "category": "Flying",
         "iframe": "https://cloud.onlinegames.io/games/2023/unity2/real-flight-simulator/index.html",
         "popularity": 92,
         "image": "https://www.onlinegames.io/media/posts/342/responsive/Real-Flight-Simulator-2-lg.jpg",
-        "tags": ["Racing", "3D", "Car", "Multiplayer"]
+        "tags": ["Flying", "3D", "aircraft", "Multiplayer"]
     },
     {
         "id": 4,
