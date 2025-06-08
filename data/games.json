@@ -5,7 +5,8 @@
         "description": "Plan your escape from a high-security prison in this thrilling adventure. Avoid guards, solve puzzles, and find your way to freedom!",
         "category": "action",
         "iframe": "https://www.crazygames.com/embed/grand-escape-prison",
-        "popularity": 95
+        "popularity": 95,
+        "image": "https://html5.gamedistribution.com/d684c36172194e42aa6c7e99fde303ef/thumbnail.jpg"
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "description": "Match colorful bubbles in this addictive puzzle game. Clear the board with strategic shots and earn high scores!",
         "category": "puzzle",
         "iframe": "https://www.crazygames.com/embed/bubble-shooter-extreme",
-        "popularity": 87
+        "popularity": 87,
+        "image": "https://html5.gamedistribution.com/2d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3a/thumbnail.jpg"
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "description": "Experience high-speed racing on challenging tracks. Customize your car, compete with players worldwide, and become the champion!",
         "category": "sports",
         "iframe": "https://www.crazygames.com/embed/turbo-racing-3d",
-        "popularity": 92
+        "popularity": 92,
+        "image": "https://html5.gamedistribution.com/5d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3a/thumbnail.jpg"
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "description": "Join 50-player online battles. Collect weapons, build defenses, and be the last one standing in this multiplayer showdown!",
         "category": "multiplayer",
         "iframe": "https://www.crazygames.com/embed/battle-royale-arena",
-        "popularity": 98
+        "popularity": 98,
+        "image": "https://html5.gamedistribution.com/8d1d8b4c5b9e4f1a4f3a0a8d3a2d5d5d/thumbnail.jpg"
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "description": "Solve magical puzzles in a fantasy world. Help the wizard restore peace to the kingdom with your problem-solving skills.",
         "category": "puzzle",
         "iframe": "https://www.crazygames.com/embed/magic-puzzle-adventure",
-        "popularity": 84
+        "popularity": 84,
+        "image": "https://html5.gamedistribution.com/1d8b4c5b9e4f1a4f3a0a8d3a5d5d5d8d/thumbnail.jpg"
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "description": "Navigate through dangerous jungles, discover ancient ruins, and find hidden treasures in this exciting adventure game.",
         "category": "action",
         "iframe": "https://www.crazygames.com/embed/jungle-explorer",
-        "popularity": 89
+        "popularity": 89,
+        "image": "https://html5.gamedistribution.com/4c5b9e4f1a4f3a0a8d3a8d1d5d5d5d8d/thumbnail.jpg"
     },
     {
         "id": 7,
@@ -53,7 +59,8 @@
         "description": "Fun soccer game with cartoon characters. Play with friends or against AI in this family-friendly sports game.",
         "category": "sports",
         "iframe": "https://www.crazygames.com/embed/cartoon-soccer",
-        "popularity": 82
+        "popularity": 82,
+        "image": "https://html5.gamedistribution.com/9e4f1a4f3a0a8d3a2d5d5d5d8d1d8b4c/thumbnail.jpg"
     },
     {
         "id": 8,
@@ -61,6 +68,7 @@
         "description": "Educational game for kids. Help cute animals learn numbers, letters, and basic skills in this fun kindergarten simulator.",
         "category": "kids",
         "iframe": "https://www.crazygames.com/embed/animal-kindergarten",
-        "popularity": 78
+        "popularity": 78,
+        "image": "https://html5.gamedistribution.com/a4f3a0a8d3a5d5d5d8d1d8b4c5b9e4f/thumbnail.jpg"
     }
 ]
