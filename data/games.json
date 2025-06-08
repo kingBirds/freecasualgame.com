@@ -31,13 +31,13 @@
     },
     {
         "id": 4,
-        "title": "Battle Royale Arena",
-        "description": "Join 50-player online battles. Collect weapons, build defenses, and be the last one standing in this multiplayer showdown!",
-        "category": "Action",
-        "iframe": "https://www.crazygames.com/embed/battle-royale-arena",
+        "title": "Fast Food Rush",
+        "description": "You're at Burger King, sinking your teeth into a juicy cheeseburger and finishing it off in about 15 minutes flat. ",
+        "category": "Strategy",
+        "iframe": "https://cloud.onlinegames.io/games/2025/unity/fast-food-rush/index-og.html",
         "popularity": 98,
-        "image": "https://img.gamedistribution.com/8d1d8b4c5b9e4f1a4f3a0a8d3a2d5d5d-512x512.jpg",
-        "tags": ["Multiplayer", "Shooter", "3D", "Action"]
+        "image": "https://www.onlinegames.io/media/posts/979/responsive/fast-food-rush-lg.jpg",
+        "tags": ["Multiplayer", "cooking", "3D", "Strategy"]
     },
     {
         "id": 5,
