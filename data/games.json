@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "title": "Grand Escape Prison",
+        "description": "Plan your escape from a high-security prison in this thrilling adventure. Avoid guards, solve puzzles, and find your way to freedom!",
+        "category": "action",
+        "iframe": "https://www.crazygames.com/embed/grand-escape-prison",
+        "popularity": 95
+    },
+    {
+        "id": 2,
+        "title": "Bubble Shooter Extreme",
+        "description": "Match colorful bubbles in this addictive puzzle game. Clear the board with strategic shots and earn high scores!",
+        "category": "puzzle",
+        "iframe": "https://www.crazygames.com/embed/bubble-shooter-extreme",
+        "popularity": 87
+    },
+    {
+        "id": 3,
+        "title": "Turbo Racing 3D",
+        "description": "Experience high-speed racing on challenging tracks. Customize your car, compete with players worldwide, and become the champion!",
+        "category": "sports",
+        "iframe": "https://www.crazygames.com/embed/turbo-racing-3d",
+        "popularity": 92
+    },
+    {
+        "id": 4,
+        "title": "Battle Royale Arena",
+        "description": "Join 50-player online battles. Collect weapons, build defenses, and be the last one standing in this multiplayer showdown!",
+        "category": "multiplayer",
+        "iframe": "https://www.crazygames.com/embed/battle-royale-arena",
+        "popularity": 98
+    },
+    {
+        "id": 5,
+        "title": "Magic Puzzle Adventure",
+        "description": "Solve magical puzzles in a fantasy world. Help the wizard restore peace to the kingdom with your problem-solving skills.",
+        "category": "puzzle",
+        "iframe": "https://www.crazygames.com/embed/magic-puzzle-adventure",
+        "popularity": 84
+    },
+    {
+        "id": 6,
+        "title": "Jungle Explorer",
+        "description": "Navigate through dangerous jungles, discover ancient ruins, and find hidden treasures in this exciting adventure game.",
+        "category": "action",
+        "iframe": "https://www.crazygames.com/embed/jungle-explorer",
+        "popularity": 89
+    },
+    {
+        "id": 7,
+        "title": "Cartoon Soccer",
+        "description": "Fun soccer game with cartoon characters. Play with friends or against AI in this family-friendly sports game.",
+        "category": "sports",
+        "iframe": "https://www.crazygames.com/embed/cartoon-soccer",
+        "popularity": 82
+    },
+    {
+        "id": 8,
+        "title": "Animal Kindergarten",
+        "description": "Educational game for kids. Help cute animals learn numbers, letters, and basic skills in this fun kindergarten simulator.",
+        "category": "kids",
+        "iframe": "https://www.crazygames.com/embed/animal-kindergarten",
+        "popularity": 78
+    }
+]
