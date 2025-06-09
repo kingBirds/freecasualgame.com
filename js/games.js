@@ -6,6 +6,7 @@
 // Global games data store
 let gamesData = [];
 let currentCategory = 'all';
+let currentSortOption = 'rating'; // Default sort by rating
 
 // Function to load games data from JSON file
 async function loadGamesData() {
@@ -15,6 +16,10 @@ async function loadGamesData() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         gamesData = await response.json();
+        
+        // Sort games by default sort option after loading
+        sortGames(currentSortOption);
+        
         return gamesData;
     } catch (error) {
         console.error('Error loading games data:', error);
@@ -101,7 +106,45 @@ function getFeaturedGames(limit = 8) {
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     
-    return shuffled.slice(0, limit);
+    // Get top rated games from shuffled array
+    return shuffled
+        .sort((a, b) => b.rating - a.rating)
+        .slice(0, limit);
+}
+
+// Function to sort games by different criteria
+function sortGames(sortBy = 'rating') {
+    currentSortOption = sortBy;
+    
+    switch (sortBy) {
+        case 'rating':
+            gamesData.sort((a, b) => b.rating - a.rating);
+            break;
+        case 'title':
+            gamesData.sort((a, b) => a.title.localeCompare(b.title));
+            break;
+        case 'newest':
+            // This is a placeholder - in a real app, we'd have a date field
+            // For now, we'll just shuffle to simulate "newest"
+            const shuffled = [...gamesData];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            gamesData = shuffled;
+            break;
+        default:
+            gamesData.sort((a, b) => b.rating - a.rating);
+    }
+    
+    return gamesData;
+}
+
+// Function to get popular games based on rating
+function getPopularGames(limit = 8) {
+    return [...gamesData]
+        .sort((a, b) => b.rating - a.rating)
+        .slice(0, limit);
 }
 
 // Expose functions to global scope
@@ -114,10 +157,19 @@ window.GameData = {
     getRelated: getRelatedGames,
     getByTag: getGamesByTag,
     getFeatured: getFeaturedGames,
+    getPopular: getPopularGames,
+    sort: sortGames,
     setCurrentCategory(category) {
         currentCategory = category;
     },
     getCurrentCategory() {
         return currentCategory;
+    },
+    setCurrentSortOption(option) {
+        currentSortOption = option;
+        sortGames(option);
+    },
+    getCurrentSortOption() {
+        return currentSortOption;
     }
 }; 

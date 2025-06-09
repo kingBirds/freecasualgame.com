@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const categoryLinks = document.querySelectorAll('.category-link');
     const languageSelect = document.querySelector('select');
     const gameCardTemplate = document.getElementById('game-card-template');
+    const sortOptions = document.getElementById('sort-options');
     
     // Load games data
     await GameData.load();
@@ -31,8 +32,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Update active category
             setActiveCategory(category);
             
-            // Update games grid
-            const games = GameData.getByCategory(category);
+            // Update games grid based on category and current sort option
+            let games = GameData.getByCategory(category);
+            const currentSort = GameData.getCurrentSortOption();
+            
+            // Apply sorting if not 'all' category
+            if (category !== 'all') {
+                games = applySorting(games, currentSort);
+            } else {
+                games = GameData.getFeatured();
+            }
+            
             renderGames(games);
             
             // Update page title
@@ -43,7 +53,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Search functionality
     searchInput.addEventListener('input', debounce(() => {
         const searchTerm = searchInput.value;
-        const games = GameData.search(searchTerm);
+        let games = GameData.search(searchTerm);
+        
+        // Apply current sort to search results
+        games = applySorting(games, GameData.getCurrentSortOption());
+        
         renderGames(games);
     }, 300));
     
@@ -53,7 +67,43 @@ document.addEventListener('DOMContentLoaded', async () => {
         changeLanguage(language);
     });
     
+    // Sort options
+    sortOptions.addEventListener('change', () => {
+        const sortBy = sortOptions.value;
+        GameData.setCurrentSortOption(sortBy);
+        
+        // Get current category games and apply sort
+        const currentCategory = GameData.getCurrentCategory();
+        let games;
+        
+        if (currentCategory === 'all') {
+            games = GameData.getFeatured();
+        } else {
+            games = GameData.getByCategory(currentCategory);
+            games = applySorting(games, sortBy);
+        }
+        
+        renderGames(games);
+    });
+    
     // Functions
+    
+    // Apply sorting to a specific array of games
+    function applySorting(games, sortOption) {
+        const gamesCopy = [...games];
+        
+        switch (sortOption) {
+            case 'rating':
+                return gamesCopy.sort((a, b) => b.rating - a.rating);
+            case 'title':
+                return gamesCopy.sort((a, b) => a.title.localeCompare(b.title));
+            case 'newest':
+                // Placeholder for newest sorting
+                return gamesCopy;
+            default:
+                return gamesCopy;
+        }
+    }
     
     // Render games to the grid
     function renderGames(games) {
@@ -75,7 +125,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             gamesGrid.appendChild(gameCard);
         });
         
-        // Add animation to cards
+        // Add enhanced animation to cards
         animateCards();
     }
     
@@ -116,8 +166,28 @@ document.addEventListener('DOMContentLoaded', async () => {
         const playNowBtn = card.querySelector('.play-now-btn');
         playNowBtn.href = `play.html?id=${game.id}`;
         
-        // Add hover animation to the card
-        card.classList.add('transition-transform', 'hover:scale-105');
+        // Add enhanced hover effects to the card
+        card.classList.add('transition-all', 'duration-300', 'hover:scale-105', 'hover:shadow-xl');
+        
+        // Add hover effect for the overlay
+        const overlay = card.querySelector('.game-overlay');
+        card.addEventListener('mouseenter', () => {
+            overlay.classList.remove('opacity-0');
+            overlay.classList.add('opacity-100');
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            overlay.classList.remove('opacity-100');
+            overlay.classList.add('opacity-0');
+        });
+        
+        // Add rating display if available
+        if (game.rating) {
+            const ratingElement = document.createElement('div');
+            ratingElement.className = 'rating-badge';
+            ratingElement.innerHTML = `<span>★</span> ${game.rating}`;
+            card.querySelector('.relative').appendChild(ratingElement);
+        }
         
         return card;
     }
@@ -157,15 +227,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     function animateCards() {
         const cards = document.querySelectorAll('.game-card');
         cards.forEach((card, index) => {
-            // Add staggered animation
+            // Add staggered animation with improved effects
             card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
+            card.style.transform = 'translateY(30px)';
             
             setTimeout(() => {
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
-            }, 50 * index);
+            }, 60 * index);
         });
     }
     
