@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const gameCardTemplate = document.getElementById('game-card-template');
     const sortOptions = document.getElementById('sort-options');
     
+    // Sidebar elements
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const closeSidebar = document.getElementById('close-sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    
     // Load games data
     await GameData.load();
     
@@ -22,6 +28,38 @@ document.addEventListener('DOMContentLoaded', async () => {
     setActiveCategory('all');
     
     // Event Listeners
+    
+    // Sidebar toggle (mobile)
+    sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.remove('-translate-x-full');
+        sidebarOverlay.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden'); // Prevent scrolling when sidebar is open
+    });
+    
+    // Close sidebar
+    closeSidebar.addEventListener('click', () => {
+        sidebar.classList.add('-translate-x-full');
+        sidebarOverlay.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    });
+    
+    // Close sidebar when clicking overlay
+    sidebarOverlay.addEventListener('click', () => {
+        sidebar.classList.add('-translate-x-full');
+        sidebarOverlay.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    });
+    
+    // Close sidebar when a category is selected (on mobile)
+    categoryLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 768) { // Only on mobile
+                sidebar.classList.add('-translate-x-full');
+                sidebarOverlay.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+        });
+    });
     
     // Category selection
     categoryLinks.forEach(link => {
@@ -85,6 +123,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         renderGames(games);
     });
+    
+    // Handle window resize
+    window.addEventListener('resize', debounce(() => {
+        if (window.innerWidth >= 768) {
+            // On desktop/tablet, ensure sidebar is visible
+            sidebar.classList.remove('-translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        } else {
+            // On mobile, ensure sidebar is hidden
+            sidebar.classList.add('-translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        }
+    }, 200));
     
     // Functions
     
