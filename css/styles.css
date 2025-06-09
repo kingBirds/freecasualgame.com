@@ -39,6 +39,91 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+/* Container responsive width */
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+
+/* Mobile optimizations */
+@media (max-width: 639px) {
+    .header-content {
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .play-now-btn {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.875rem;
+    }
+    
+    .game-card {
+        margin-bottom: 1rem;
+    }
+    
+    .game-image-container img {
+        height: 140px;
+    }
+}
+
+/* Sidebar toggle button */
+#sidebar-toggle {
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar-toggle:hover {
+    background-color: var(--apple-dark-blue);
+}
+
+/* Sidebar styles */
+#sidebar {
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767px) {
+    #sidebar {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
 /* Button hover effects */
 .btn-hover-effect {
     transition: all 0.3s ease;
@@ -63,6 +148,21 @@ body {
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Mobile game card adjustments */
+@media (max-width: 639px) {
+    .game-card:hover {
+        transform: translateY(-4px);
+    }
+    
+    .game-card .p-4 {
+        padding: 0.75rem;
+    }
+    
+    .game-title {
+        font-size: 1rem;
+    }
+}
+
 .game-image-container {
     overflow: hidden;
     position: relative;
@@ -70,6 +170,8 @@ body {
 
 .game-image-container img {
     transition: transform 0.6s ease;
+    width: 100%;
+    object-fit: cover;
 }
 
 .game-card:hover .game-image-container img {
@@ -135,6 +237,14 @@ body {
 .play-now-btn {
     position: relative;
     z-index: 1;
+}
+
+/* Mobile optimization for buttons */
+@media (max-width: 639px) {
+    .play-now-btn {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.75rem;
+    }
 }
 
 .play-now-btn::after {
@@ -220,6 +330,14 @@ body {
         width: 100%;
         margin: 1rem 0;
     }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        margin-bottom: 2rem;
+    }
 }
 
 /* Loading spinner animation */
@@ -266,6 +384,14 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Mobile optimizations for game tags */
+@media (max-width: 639px) {
+    .game-tag {
+        padding: 0.15rem 0.5rem;
+        font-size: 0.65rem;
+    }
+}
+
 /* Rating stars animation */
 .rating-star {
     transition: all 0.3s ease;
@@ -295,9 +421,8 @@ body {
     to { transform: translateX(0); opacity: 1; }
 }
 
-/* Apple-like focus styles */
+/* Focus styles */
 button:focus, a:focus, input:focus, select:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.5);
-    border-radius: 5px;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
 } 
