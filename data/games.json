@@ -1,122 +1,232 @@
 [
     {
-        "id": 1,
-        "title": "monster-survivors",
-        "description": "he monsters are here, and you must survive!  Aggressive crabs, eerie pumpkins, flesh-eating plants and yes, even evil bees!",
-        "category": "Action",
-        "iframe": "https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html",
-        "popularity": 95,
-        "image": "https://www.onlinegames.io/media/posts/942/responsive/Monster-survivors-lg.jpg",
-        "tags": ["1 Player", "2D", "Action", "battle"]
+        "id": "apocalypse-truck",
+        "title": "Apocalypse Truck",
+        "embed": "https://cloud.onlinegames.io/games/2021/1/apocalypse-truck/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/1015/responsive/apocalypse-truck-xs.jpg",
+        "tags": ["1-player", "2d", "car", "crazy", "driving", "free", "racing", "truck", "zombie"],
+        "description": "When the virus hit, cities crumbled, people vanished. The world went silent except for the groans of the undead. You're one of the few survivors of zombie apocalypse. Your only hope is a beat-up monster truck, with some spikes, plates, and just enough horsepower to push through the zombie chaos.",
+        "category": "racing",
+        "rating": 4.2
     },
     {
-        "id": 2,
+        "id": "road-fury",
+        "title": "Road Fury",
+        "embed": "https://cloud.onlinegames.io/games/2020/11/road-fury/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/998/responsive/road-fury-xs.jpg",
+        "tags": ["1-player", "2d", "car", "driving", "free", "racing", "action"],
+        "description": "Race through the apocalyptic wastelands in this high-octane driving game. Upgrade your vehicle, outrun your enemies, and become the king of the road in a world where the only rule is survival.",
+        "category": "racing",
+        "rating": 4.5
+    },
+    {
+        "id": "pixel-combat",
+        "title": "Pixel Combat",
+        "embed": "https://cloud.onlinegames.io/games/2021/3/pixel-combat/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/1042/responsive/pixel-combat-xs.jpg",
+        "tags": ["1-player", "3d", "action", "fps", "shooting", "multiplayer"],
+        "description": "Enter a blocky world of intense firefights in this first-person shooter. Choose your weapons, customize your character, and engage in fast-paced battles across various pixel-built maps.",
+        "category": "action",
+        "rating": 4.3
+    },
+    {
+        "id": "super-puzzle",
+        "title": "Super Puzzle",
+        "embed": "https://cloud.onlinegames.io/games/2020/8/super-puzzle/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/967/responsive/super-puzzle-xs.jpg",
+        "tags": ["1-player", "2d", "brain", "puzzle", "strategy"],
+        "description": "Challenge your mind with this addictive puzzle game. Solve increasingly difficult puzzles, unlock new levels, and test your problem-solving skills against the clock.",
+        "category": "puzzle",
+        "rating": 4.7
+    },
+    {
+        "id": "castle-defense",
+        "title": "Castle Defense",
+        "embed": "https://cloud.onlinegames.io/games/2021/2/castle-defense/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/1027/responsive/castle-defense-xs.jpg",
+        "tags": ["1-player", "2d", "defense", "strategy", "tower"],
+        "description": "Protect your kingdom from waves of invading enemies in this strategic tower defense game. Build towers, upgrade your defenses, and use special abilities to repel the advancing hordes.",
+        "category": "strategy",
+        "rating": 4.1
+    },
+    {
+        "id": "soccer-stars",
+        "title": "Soccer Stars",
+        "embed": "https://cloud.onlinegames.io/games/2020/9/soccer-stars/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/978/responsive/soccer-stars-xs.jpg",
+        "tags": ["1-player", "2-player", "sports", "soccer", "multiplayer"],
+        "description": "Experience the thrill of soccer with this fast-paced arcade game. Control your team, score goals, and compete against friends or AI opponents in various tournaments and challenges.",
+        "category": "sports",
+        "rating": 4.4
+    },
+    {
+        "id": "space-invaders",
+        "title": "Space Invaders",
+        "embed": "https://cloud.onlinegames.io/games/2020/12/space-invaders/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/1003/responsive/space-invaders-xs.jpg",
+        "tags": ["1-player", "2d", "arcade", "classic", "retro", "shooting"],
+        "description": "Relive the classic arcade experience with this modern take on Space Invaders. Defend Earth from waves of alien attackers, collect power-ups, and achieve the highest score possible.",
+        "category": "arcade",
+        "rating": 4.0
+    },
+    {
+        "id": "zombie-survival",
+        "title": "Zombie Survival",
+        "embed": "https://cloud.onlinegames.io/games/2021/4/zombie-survival/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/1058/responsive/zombie-survival-xs.jpg",
+        "tags": ["1-player", "action", "horror", "survival", "zombie"],
+        "description": "Survive in a world overrun by the undead. Scavenge for supplies, craft weapons, and build defenses to last through the night as hordes of zombies hunt you down.",
+        "category": "zombie",
+        "rating": 4.6
+    },
+    {
+        "id": "treasure-hunter",
+        "title": "Treasure Hunter",
+        "embed": "https://cloud.onlinegames.io/games/2021/1/treasure-hunter/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/1019/responsive/treasure-hunter-xs.jpg",
+        "tags": ["1-player", "2d", "adventure", "exploration", "platformer"],
+        "description": "Embark on an epic adventure to find hidden treasures across mysterious lands. Navigate challenging platforming sections, solve puzzles, and battle enemies to uncover ancient artifacts.",
+        "category": "adventure",
+        "rating": 4.2
+    },
+    {
+        "id": "battle-royale",
+        "title": "Battle Royale",
+        "embed": "https://cloud.onlinegames.io/games/2021/5/battle-royale/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/1072/responsive/battle-royale-xs.jpg",
+        "tags": ["multiplayer", "action", "battle", "shooting", "survival"],
+        "description": "Drop into a massive battlefield where only one player can emerge victorious. Scavenge for weapons, eliminate opponents, and stay within the safe zone as the playable area shrinks over time.",
+        "category": "multiplayer",
+        "rating": 4.8
+    },
+    {
+        "id": "fruit-ninja",
+        "title": "Fruit Ninja",
+        "embed": "https://cloud.onlinegames.io/games/2020/10/fruit-ninja/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/983/responsive/fruit-ninja-xs.jpg",
+        "tags": ["1-player", "2d", "arcade", "casual", "mobile"],
+        "description": "Slice your way through juicy fruits in this addictive arcade game. Swipe to cut fruits while avoiding bombs, and aim for the highest combo scores to climb the leaderboard.",
+        "category": "arcade",
+        "rating": 4.3
+    },
+    {
+        "id": "jungle-run",
+        "title": "Jungle Run",
+        "embed": "https://cloud.onlinegames.io/games/2021/2/jungle-run/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/1035/responsive/jungle-run-xs.jpg",
+        "tags": ["1-player", "2d", "adventure", "endless", "runner"],
+        "description": "Run, jump, and slide through a dangerous jungle in this endless runner game. Collect coins, avoid obstacles, and unlock new characters with special abilities to achieve record distances.",
+        "category": "adventure",
+        "rating": 4.0
+    },
+    {
+        "id": "kick-the-pirate",
+        "title": "Kick the Pirate",
+        "embed": "https://cloud.onlinegames.io/games/2022/construct/92/kick-the-pirate/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/1012/responsive/Kick-The-Pirate-xs.jpg",
+        "tags": ["1-player", "2d", "clicker", "crazy", "destroy", "free", "fun", "funny", "mobile", "mouse", "pirate", "weapon"],
+        "description": "Ahoy matey! Pirates may be brave on the high seas, but they've never met you. In Kick the Pirate, your job is simple: turn this grumpy pirate into your personal punching bag. He's muttering curses or just standing there looking smug.",
+        "category": "clicker",
+        "rating": 3.9
+    },
+    {
+        "id": "julie-beauty-salon",
+        "title": "Julie Beauty Salon",
+        "embed": "https://cloud.onlinegames.io/games/2021/1/julie-beauty-salon/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/1011/responsive/Julie-Beauty-Salon-xs.jpg",
+        "tags": ["2d", "free", "girl", "html5", "kids", "makeup", "mobile", "mouse"],
+        "description": "Julie Beauty Salon is a glam up makeover game where you run a beauty salon. Every makeover is a mini masterpiece in this fun, stylish browser game. You're a beauty expert in charge of transforming a fabulous girl with bold makeup, trendy hairstyles, and colorful manicures. If you've ever dreamed of being a stylist or just love mixing and matching beauty looks, this free game is perfect for you.",
+        "category": "casual",
+        "rating": 4.1
+    },
+    {
+        "id": "mini-cars-racing",
+        "title": "Mini Cars Racing",
+        "embed": "https://cloud.onlinegames.io/games/2021/unity/mini-cars-racing/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/1010/responsive/Mini-Cars-Racing-xs.jpg",
+        "tags": ["2-player", "3d", "arcade", "car", "crazy", "driving", "free", "fun", "racing", "speed", "stunt", "unity"],
+        "description": "Mini Cars Racing is a 2 player car racing game you can play free on FreeCasualGame.com! You can race against the clock or battle a friend on the same device. It's fast, fun, and feels just like playing with toy cars on your childhood road traffic rug.",
+        "category": "racing",
+        "rating": 4.5
+    },
+    {
+        "id": "pyramid-solitaire",
+        "title": "Pyramid Solitaire",
+        "embed": "https://cloud.onlinegames.io/games/2025/html/solitaire/index-og.html#pyramid",
+        "image": "https://www.onlinegames.io/media/posts/1006/responsive/pyramid-Solitaire-xs.jpg",
+        "tags": ["1-player", "2d", "board", "card", "free", "logic", "mobile", "mouse", "solitaire"],
+        "description": "Pyramid Solitaire is a free online card game at FreeCasualGame.com. In this calming card puzzle, you need to remove a pyramid of cards by selecting pairs that add up to 13. It's a simple but fun game to learn.",
+        "category": "card",
+        "rating": 4.0
+    },
+    {
+        "id": "solitaire",
+        "title": "Solitaire",
+        "embed": "https://cloud.onlinegames.io/games/2025/html/solitaire/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/1007/responsive/solitaire-xs.jpg",
+        "tags": ["1-player", "2d", "board", "card", "free", "logic", "mobile", "mouse", "solitaire"],
+        "description": "\"Emma's afternoon hit a wall at exactly 3:17 PM. Her inbox chimed again, another urgent task from her manager. Minimized the spreadsheet and opened Solitaire on FreeCasualGame.com.\"",
+        "category": "card",
+        "rating": 4.2
+    },
+    {
+        "id": "drift-king",
+        "title": "Drift King",
+        "embed": "https://www.onlinegames.io/games/2024/unity/drift-king/index.html",
+        "image": "https://www.onlinegames.io/media/posts/729/responsive/Drift-King-xs.jpg",
+        "tags": ["3d", "car", "crazy", "drift", "driving", "free", "multiplayer", "simulator", "speed", "unity"],
+        "description": "Drift King stands out among online drift games, offering a unique experience where you can witness the smoke you leave behind from the rearview window. This game surrounds you in every realistic detail, from its premium 3D visuals to the choice of 10 sports cars and 6 maps. The comprehensive tuning options further enhance the game, making it a complete package for drifting enthusiasts.",
+        "category": "racing",
+        "rating": 4.7
+    },
+    {
+        "id": "love-tester",
         "title": "Love Tester",
-        "description": "Here is a way to test the love of the one and only. Love Tester is an online game where you fill out your and your crush's names.",
-        "category": "Action",
-        "iframe": "https://www.onlinegames.io/games/2021/3/love-tester/index.html",
-        "popularity": 95,
-        "image": "https://www.onlinegames.io/media/posts/152/responsive/love-tester-lg.jpg",
-        "tags": ["1 Player", "2D", "Funny" ]
+        "embed": "https://www.onlinegames.io/games/2021/3/love-tester/index.html",
+        "image": "https://www.onlinegames.io/media/posts/152/responsive/love-tester-xs.jpg",
+        "tags": ["1-player", "2d", "free", "fun", "funny", "girl", "html5", "kids", "love", "mobile"],
+        "description": "Do you want to know how much your crush falls for you? Here is a way to test the love of the one and only. Love Tester is an online game where you fill out your and your crush's names. Then, let the tester do all the calculations about how much they love you, miss you during the day, or have any second thoughts about you.",
+        "category": "casual",
+        "rating": 3.8
     },
     {
-        "id": 3,
-        "title": "Real Flight Simulator",
-        "description": "Real Flight Simulator is a realistic game that gives you the ultimate flight experience.There is the possibility to choose the aircraft you want and start to control the plane.",
-        "category": "Flying",
-        "iframe": "https://cloud.onlinegames.io/games/2023/unity2/real-flight-simulator/index.html",
-        "popularity": 92,
-        "image": "https://www.onlinegames.io/media/posts/342/responsive/Real-Flight-Simulator-2-lg.jpg",
-        "tags": ["Flying", "3D", "aircraft", "Multiplayer"]
+        "id": "highway-traffic",
+        "title": "Highway Traffic",
+        "embed": "https://www.onlinegames.io/games/2022/unity/highway-traffic/index.html",
+        "image": "https://www.onlinegames.io/media/posts/32/responsive/Highway-Traffic-2-xs.jpg",
+        "tags": ["1-player", "3d", "car", "crash", "crazy", "driving", "endless", "free", "police", "racing", "speed", "traffic", "unity"],
+        "description": "Highway Traffic game is centered around driving down the highway, dodging other cars, and avoiding accidents. It gets tricky because other vehicles are slowing down, speeding up or stopping abruptly, so you always have to keep your attention and be ready to make a quick maneuver. The longer you go without hitting other cars, the more points you collect and the more upgrades you can get. Highway Traffic gets challenging very quickly, so you must build up crazy driving skills to reach higher levels!",
+        "category": "driving",
+        "rating": 4.3
     },
     {
-        "id": 4,
+        "id": "fast-food-rush",
         "title": "Fast Food Rush",
-        "description": "You're at Burger King, sinking your teeth into a juicy cheeseburger and finishing it off in about 15 minutes flat. ",
-        "category": "Strategy",
-        "iframe": "https://cloud.onlinegames.io/games/2025/unity/fast-food-rush/index-og.html",
-        "popularity": 98,
-        "image": "https://www.onlinegames.io/media/posts/979/responsive/fast-food-rush-lg.jpg",
-        "tags": ["Multiplayer", "cooking", "3D", "Strategy"]
+        "embed": "https://cloud.onlinegames.io/games/2025/unity/fast-food-rush/index-og.html",
+        "image": "https://www.onlinegames.io/media/posts/979/responsive/fast-food-rush-xs.jpg",
+        "tags": ["1-player", "3d", "cooking", "free", "mouse", "restaurant", "simulator", "strategy", "tycoon"],
+        "description": "You're at Burger King, sinking your teeth into a juicy cheeseburger and finishing it off in about 15 minutes flat. But just this once, before you head out, pause and take a quick look around. Employees are rushing nonstop, flipping sizzling patties, taking orders at the counter, pouring ice-cold drinks, and wiping down tables. At this point, running your own burger joint might seem pretty appealing, at least to some people.",
+        "category": "simulation",
+        "rating": 4.1
     },
     {
-        "id": 5,
-        "title": "Magic Puzzle Adventure",
-        "description": "Solve magical puzzles in a fantasy world. Help the wizard restore peace to the kingdom with your problem-solving skills.",
-        "category": "Adventure",
-        "iframe": "https://www.crazygames.com/embed/magic-puzzle-adventure",
-        "popularity": 84,
-        "image": "https://img.gamedistribution.com/1d8b4c5b9e4f1a4f3a0a8d3a5d5d5d8d-512x512.jpg",
-        "tags": ["Puzzle", "Adventure", "1 Player", "Fantasy"]
+        "id": "stack-fire-ball",
+        "title": "Stack Fire Ball",
+        "embed": "https://www.onlinegames.io/games/2021/unity/stack-fire-ball/index.html",
+        "image": "https://www.onlinegames.io/media/posts/184/responsive/Stack-Fire-Ball-Game-xs.jpg",
+        "tags": ["1-player", "3d", "arcade", "avoid", "ball", "color", "crazy", "destroy", "free", "mobile", "mouse", "skill"],
+        "description": "Reach the end by guiding the ball through each stage, avoiding the dark tiles. This game is a combination between relaxation but also keeping attention to details. With modern graphics, you will enjoy knocking down the colorful tiles as fast as you can. Let the ball bounce and complete all the stages.",
+        "category": "arcade",
+        "rating": 4.0
     },
     {
-        "id": 6,
-        "title": "Jungle Explorer",
-        "description": "Navigate through dangerous jungles, discover ancient ruins, and find hidden treasures in this exciting adventure game.",
-        "category": "Adventure",
-        "iframe": "https://www.crazygames.com/embed/jungle-explorer",
-        "popularity": 89,
-        "image": "https://img.gamedistribution.com/4c5b9e4f1a4f3a0a8d3a8d1d5d5d5d8d-512x512.jpg",
-        "tags": ["Adventure", "Exploration", "1 Player", "3D"]
-    },
-    {
-        "id": 7,
-        "title": "Cartoon Soccer",
-        "description": "Fun soccer game with cartoon characters. Play with friends or against AI in this family-friendly sports game.",
-        "category": "Football",
-        "iframe": "https://www.crazygames.com/embed/cartoon-soccer",
-        "popularity": 82,
-        "image": "https://img.gamedistribution.com/9e4f1a4f3a0a8d3a2d5d5d5d8d1d8b4c-512x512.jpg",
-        "tags": ["Sports", "Multiplayer", "Football", "Casual"]
-    },
-    {
-        "id": 8,
-        "title": "Animal Kindergarten",
-        "description": "Educational game for kids. Help cute animals learn numbers, letters, and basic skills in this fun kindergarten simulator.",
-        "category": "Kids",
-        "iframe": "https://www.crazygames.com/embed/animal-kindergarten",
-        "popularity": 78,
-        "image": "https://img.gamedistribution.com/a4f3a0a8d3a5d5d5d8d1d8b4c5b9e4f-512x512.jpg",
-        "tags": ["Kids", "Educational", "1 Player", "Animals"]
-    },
-    {
-        "id": 9,
-        "title": "Super Mario World",
-        "description": "Join Mario on his classic adventure to rescue Princess Peach from Bowser's castle in this timeless platformer.",
-        "category": "Mario Bros",
-        "iframe": "https://www.crazygames.com/embed/super-mario-world",
-        "popularity": 96,
-        "image": "https://img.gamedistribution.com/7d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3a-512x512.jpg",
-        "tags": ["Platformer", "Classic", "1 Player", "Adventure"]
-    },
-    {
-        "id": 10,
-        "title": "Pokemon Battle Arena",
-        "description": "Battle with your favorite Pokemon in this exciting turn-based strategy game. Collect, train, and become the ultimate Pokemon master!",
-        "category": "Pokemon",
-        "iframe": "https://www.crazygames.com/embed/pokemon-battle-arena",
-        "popularity": 91,
-        "image": "https://img.gamedistribution.com/3a0a8d3a5d5d5d8d1d8b4c5b9e4f1a4f-512x512.jpg",
-        "tags": ["Strategy", "Turn-based", "RPG", "Collectible"]
-    },
-    {
-        "id": 11,
-        "title": "Virtual Poker Night",
-        "description": "Join a virtual poker table and play with friends or players from around the world. Test your bluffing skills and win big!",
-        "category": "Cards",
-        "iframe": "https://www.crazygames.com/embed/virtual-poker-night",
-        "popularity": 85,
-        "image": "https://img.gamedistribution.com/5d5d5d8d1d8b4c5b9e4f1a4f3a0a8d3b-512x512.jpg",
-        "tags": ["Cards", "Multiplayer", "Strategy", "Casino"]
-    },
-    {
-        "id": 12,
-        "title": "Fashion Showdown",
-        "description": "Create stunning outfits for models and compete in fashion challenges. Become the top stylist in the city!",
-        "category": "Dress Up",
-        "iframe": "https://www.crazygames.com/embed/fashion-showdown",
-        "popularity": 80,
-        "image": "https://img.gamedistribution.com/4f1a4f3a0a8d3a5d5d5d8d1d8b4c5b9e-512x512.jpg",
-        "tags": ["Dress Up", "Creative", "Fashion", "1 Player"]
+        "id": "masked-special-forces",
+        "title": "Masked Special Forces",
+        "embed": "https://www.onlinegames.io/games/2022/unity2/masked-special-forces/index.html",
+        "image": "https://www.onlinegames.io/media/posts/310/responsive/Masked-Special-Forces-FPS-xs.jpg",
+        "tags": ["3d", "action", "armor", "battle-royale", "first-person-shooter", "free", "gun", "io-games", "multiplayer", "shooting", "war", "weapon"],
+        "description": "Masked Special Forces is a multiplayer first-person shooter game with a myriad of customization options. The game puts you in the shoes of a commander in the battle arena. As a talented warrior, team up, strategize, and take down the opponents one by one. Access to an array of upgradable weapons, armory, kill messages, and victory dances on the main menu.",
+        "category": "shooting",
+        "rating": 4.6
     }
-]
+] 
