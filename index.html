@@ -57,20 +57,33 @@
                 <nav class="space-y-2">
                     <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="all">All Games</a>
                     <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="action">Action Games</a>
-                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="racing">Racing Games</a>
-                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="puzzle">Puzzle Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="adventure">Adventure Games</a>
                     <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="arcade">Arcade Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="card">Card Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="casual">Casual Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="multiplayer">Multiplayer Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="puzzle">Puzzle Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="racing">Racing Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="shooting">Shooting Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="simulation">Simulation Games</a>
                     <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="sports">Sports Games</a>
                     <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="strategy">Strategy Games</a>
-                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="multiplayer">Multiplayer Games</a>
-                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="adventure">Adventure Games</a>
-                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="zombie">Zombie Games</a>
                 </nav>
             </aside>
 
             <!-- Game Grid -->
             <div class="w-full md:w-4/5">
-                <h1 class="text-3xl font-bold mb-6 text-gray-800">Featured Games</h1>
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-3xl font-bold text-gray-800">Featured Games</h1>
+                    <div class="flex items-center">
+                        <span class="mr-2 text-gray-700">Sort by:</span>
+                        <select id="sort-options" class="bg-white border border-gray-300 rounded-md py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400">
+                            <option value="rating">Top Rated</option>
+                            <option value="title">A-Z</option>
+                            <option value="newest">Newest</option>
+                        </select>
+                    </div>
+                </div>
                 <div id="games-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     <!-- Game cards will be dynamically inserted here -->
                 </div>
@@ -89,7 +102,7 @@
                         <h2 class="text-xl font-semibold mb-4">Popular Categories</h2>
                         <ul class="space-y-2 text-gray-300">
                             <li><a href="#" class="hover:text-blue-300 transition-colors">Action Games</a></li>
-                            <li><a href="#" class="hover:text-blue-300 transition-colors">Racing Games</a></li>
+                            <li><a href="#" class="hover:text-blue-300 transition-colors">Adventure Games</a></li>
                             <li><a href="#" class="hover:text-blue-300 transition-colors">Puzzle Games</a></li>
                             <li><a href="#" class="hover:text-blue-300 transition-colors">Multiplayer Games</a></li>
                         </ul>
