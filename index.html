@@ -3,492 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Casual Games</title>
-    <link rel="canonical" href="https://www.yourdomain.com/games" />
-    <meta name="description" content="Play hundreds of free online games in all categories. Action, puzzle, sports and more - all in one place!">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0071e3',
-                        secondary: '#f5f5f7',
-                        dark: '#1d1d1f',
-                        action: '#ff6b6b',
-                        adventure: '#4ecdc4',
-                        racing: '#ff9f1c',
-                        classic: '#6a0572',
-                        mario: '#e63946',
-                        kids: '#ff99c8',
-                        pokemon: '#ffd166',
-                        board: '#06d6a0',
-                        cards: '#118ab2',
-                        football: '#073b4c',
-                        car: '#5e548e',
-                        motorbike: '#f15bb5',
-                        dressup: '#9b5de5'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .game-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .game-card:hover .game-description {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-        .game-description {
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(10px);
-            pointer-events: none;
-        }
-        .play-btn {
-            transition: all 0.2s ease;
-            z-index: 20;
-        }
-        .play-btn:hover {
-            background-color: #005bb5 !important;
-            transform: scale(1.05);
-        }
-        .category-btn {
-            transition: all 0.2s ease;
-        }
-        .category-btn:hover {
-            transform: translateX(5px);
-        }
-        .modal-overlay {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        .skeleton {
-            animation: skeleton-loading 1.5s linear infinite alternate;
-        }
-        @keyframes skeleton-loading {
-            0% { background-color: hsl(200, 20%, 80%); }
-            100% { background-color: hsl(200, 20%, 95%); }
-        }
-        .game-image {
-            height: 192px;
-            object-fit: cover;
-            width: 100%;
-        }
-        .popular-badge {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            color: white;
-            padding: 4px 8px;
-            border-radius: 0 0 0 12px;
-            font-weight: bold;
-            font-size: 12px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        .game-image-container {
-            position: relative;
-            overflow: hidden;
-        }
-        .game-image-container::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 40%;
-            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
-            pointer-events: none;
-        }
-        .tag {
-            display: inline-block;
-            background-color: #e6f1ff;
-            color: #0071e3;
-            border-radius: 12px;
-            padding: 2px 8px;
-            font-size: 0.75rem;
-            margin: 2px;
-            white-space: nowrap;
-        }
-        .sidebar {
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            z-index: 30;
-            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
-            height: calc(100vh - 80px);
-            position: fixed;
-            overflow-y: auto;
-            top: 80px;
-            left: 0;
-        }
-        .sidebar.active {
-            transform: translateX(0);
-        }
-        .sidebar-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.5);
-            z-index: 20;
-        }
-        .sidebar-overlay.active {
-            display: block;
-        }
-        @media (min-width: 768px) {
-            .sidebar {
-                transform: translateX(0);
-                position: sticky;
-                top: 80px;
-                height: auto;
-                max-height: calc(100vh - 100px);
-                background: white;
-            }
-            .sidebar-overlay {
-                display: none !important;
-            }
-        }
-    </style>
+    <title>FreeCasualGame.com - Play Free Online Games</title>
+    <meta name="description" content="Play thousands of free online games including racing, action, dress-up, escape, arcade, puzzle and brain games. Plus, all you favorite Disney and Star Wars characters!">
+    <link rel="canonical" href="https://www.freecasualgame.com/" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-    <!-- 移动端菜单按钮 -->
-    <div class="md:hidden fixed top-4 left-4 z-50">
-        <button id="mobile-menu-btn" class="bg-white p-2 rounded-full shadow-lg">
-            <i class="fas fa-bars text-primary"></i>
-        </button>
-    </div>
-
-    <!-- 搜索区域 -->
-    <header class="bg-white shadow-sm sticky top-0 z-40">
-        <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center">
-            <h1 class="text-2xl font-bold text-primary mb-3 md:mb-0">Free Casual Games</h1>
-            <div class="w-full md:w-1/3 relative">
-                <input type="text" id="search-input" placeholder="Search games..." class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary">
-                <i class="fas fa-search absolute right-3 top-2.5 text-gray-400"></i>
-            </div>
-            <div class="hidden md:flex items-center space-x-4">
-                <button class="bg-primary text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">Sign In</button>
-            </div>
-        </div>
-    </header>
-
-    <div class="flex flex-col md:flex-row container mx-auto px-4 py-6 relative">
-        <!-- 侧边栏覆盖层 -->
-        <div id="sidebar-overlay" class="sidebar-overlay"></div>
-        
-        <!-- 侧边栏 -->
-        <aside id="sidebar" class="sidebar w-full md:w-64 rounded-lg shadow-md md:mr-6 mb-6 md:mb-0">
-            <div class="p-4">
-                <h2 class="text-xl font-semibold mb-4 text-gray-700">Game Categories</h2>
-                <ul class="space-y-2">
-                    <li><button class="category-btn w-full text-left px-4 py-3 rounded-lg transition hover:bg-gray-100 bg-action text-white" data-category="action">Action</button></li>
-                    <li><button class="category-btn w-full text-left px-4 py-3 rounded-lg transition hover:bg-gray-100 bg-adventure text-white" data-category="adventure">Adventure</button></li>
-                    <li><button class="category-btn w-full text-left px-4 py-3 rounded-lg transition hover:bg-gray-100 bg-racing text-white" data-category="racing">Racing</button></li>
-                    <li><button class="category-btn w-full text-left px-4 py-3 rounded-lg transition hover:bg-gray-100 bg-classic text-white" data-category="classic">Classic</button></li>
-                    <li><button class="category-btn w-full text-left px-4 py-3 rounded-lg transition hover:bg-gray-100 bg-mario text-white" data-category="mario">Mario Bros</button></li>
-                    <li><button class="category-btn w-full text-left px-4 py-3 rounded-lg transition hover:bg-gray-100 bg-kids text-white" data-category="kids">Kids</button></li>
-                    <li><button class="category-btn w-full text-left px-4 py-3 rounded-lg transition hover:bg-gray-100 bg-pokemon text-white" data-category="pokemon">Pokemon</button></li>
-                    <li><button class="category-btn w-full text-left px-4 py-3 rounded-lg transition hover:bg-gray-100 bg-board text-white" data-category="board">Board</button></li>
-                    <li><button class="category-btn w-full text-left px-4 py-3 rounded-lg transition hover:bg-gray-100 bg-cards text-white" data-category="cards">Cards</button></li>
-                    <li><button class="category-btn w-full text-left px-4 py-3 rounded-lg transition hover:bg-gray-100 bg-football text-white" data-category="football">Football</button></li>
-                    <li><button class="category-btn w-full text-left px-4 py-3 rounded-lg transition hover:bg-gray-100 bg-car text-white" data-category="car">Car</button></li>
-                    <li><button class="category-btn w-full text-left px-4 py-3 rounded-lg transition hover:bg-gray-100 bg-motorbike text-white" data-category="motorbike">Motorbike</button></li>
-                    <li><button class="category-btn w-full text-left px-4 py-3 rounded-lg transition hover:bg-gray-100 bg-dressup text-white" data-category="dressup">Dress Up</button></li>
-                </ul>
-            </div>
-        </aside>
-
-        <!-- 主内容区 -->
-        <main class="flex-1">
-            <div class="mb-6">
-                <h2 class="text-2xl font-bold text-gray-800 mb-2">Featured Games</h2>
-                <p class="text-gray-600">Discover our hand-picked selection of top games</p>
-            </div>
-
-            <!-- 游戏列表 -->
-            <div id="games-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- 骨架屏加载状态 -->
-                <div class="game-card skeleton bg-white rounded-xl shadow overflow-hidden relative">
-                    <div class="game-image-container">
-                        <div class="bg-gray-200 w-full h-48"></div>
-                    </div>
-                    <div class="p-4">
-                        <div class="h-6 w-3/4 mb-4 bg-gray-200 rounded"></div>
-                        <div class="flex flex-wrap mb-2">
-                            <div class="h-4 w-16 bg-gray-200 rounded-full mr-2 mb-2"></div>
-                            <div class="h-4 w-12 bg-gray-200 rounded-full mr-2 mb-2"></div>
-                        </div>
-                        <div class="flex justify-between items-center mt-3">
-                            <div class="h-4 w-1/3 bg-gray-200 rounded-full"></div>
-                            <div class="h-10 w-24 bg-gray-200 rounded-full"></div>
-                        </div>
+<body class="bg-gray-100 font-sans antialiased">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header Section -->
+        <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg">
+            <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="images/logo.svg" alt="FreeCasualGame.com Logo" class="h-10 mr-3">
+                    <span class="text-2xl font-bold">FreeCasualGame.com</span>
+                </div>
+                
+                <div class="w-full md:w-1/2 mb-4 md:mb-0">
+                    <h2 class="text-center text-xl font-semibold mb-3">Play Thousands of Free Online Games</h2>
+                    <div class="relative">
+                        <input type="text" placeholder="Search games..." class="w-full py-2 px-4 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <button class="absolute right-0 top-0 mt-2 mr-4 text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
-                <!-- 重复骨架屏 -->
-                <div class="game-card skeleton bg-white rounded-xl shadow overflow-hidden relative">
-                    <div class="game-image-container">
-                        <div class="bg-gray-200 w-full h-48"></div>
-                    </div>
-                    <div class="p-4">
-                        <div class="h-6 w-3/4 mb-4 bg-gray-200 rounded"></div>
-                        <div class="flex flex-wrap mb-2">
-                            <div class="h-4 w-16 bg-gray-200 rounded-full mr-2 mb-2"></div>
-                            <div class="h-4 w-12 bg-gray-200 rounded-full mr-2 mb-2"></div>
-                        </div>
-                        <div class="flex justify-between items-center mt-3">
-                            <div class="h-4 w-1/3 bg-gray-200 rounded-full"></div>
-                            <div class="h-10 w-24 bg-gray-200 rounded-full"></div>
-                        </div>
+                
+                <div class="relative">
+                    <select class="appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                        <option value="zh">中文</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
                     </div>
                 </div>
-                <div class="game-card skeleton bg-white rounded-xl shadow overflow-hidden relative hidden sm:block">
-                    <div class="game-image-container">
-                        <div class="bg-gray-200 w-full h-48"></div>
-                    </div>
-                    <div class="p-4">
-                        <div class="h-6 w-3/4 mb-4 bg-gray-200 rounded"></div>
-                        <div class="flex flex-wrap mb-2">
-                            <div class="h-4 w-16 bg-gray-200 rounded-full mr-2 mb-2"></div>
-                            <div class="h-4 w-12 bg-gray-200 rounded-full mr-2 mb-2"></div>
-                        </div>
-                        <div class="flex justify-between items-center mt-3">
-                            <div class="h-4 w-1/3 bg-gray-200 rounded-full"></div>
-                            <div class="h-10 w-24 bg-gray-200 rounded-full"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-card skeleton bg-white rounded-xl shadow overflow-hidden relative hidden lg:block">
-                    <div class="game-image-container">
-                        <div class="bg-gray-200 w-full h-48"></div>
-                    </div>
-                    <div class="p-4">
-                        <div class="h-6 w-3/4 mb-4 bg-gray-200 rounded"></div>
-                        <div class="flex flex-wrap mb-2">
-                            <div class="h-4 w-16 bg-gray-200 rounded-full mr-2 mb-2"></div>
-                            <div class="h-4 w-12 bg-gray-200 rounded-full mr-2 mb-2"></div>
-                        </div>
-                        <div class="flex justify-between items-center mt-3">
-                            <div class="h-4 w-1/3 bg-gray-200 rounded-full"></div>
-                            <div class="h-10 w-24 bg-gray-200 rounded-full"></div>
-                        </div>
-                    </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-8 flex flex-col md:flex-row">
+            <!-- Sidebar Categories -->
+            <aside class="w-full md:w-1/5 bg-white rounded-lg shadow-md p-4 mb-6 md:mb-0 md:mr-6">
+                <h2 class="text-lg font-semibold mb-4 text-gray-800 border-b pb-2">Game Categories</h2>
+                <nav class="space-y-2">
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="all">All Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="action">Action Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="racing">Racing Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="puzzle">Puzzle Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="arcade">Arcade Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="sports">Sports Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="strategy">Strategy Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="multiplayer">Multiplayer Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="adventure">Adventure Games</a>
+                    <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="zombie">Zombie Games</a>
+                </nav>
+            </aside>
+
+            <!-- Game Grid -->
+            <div class="w-full md:w-4/5">
+                <h1 class="text-3xl font-bold mb-6 text-gray-800">Featured Games</h1>
+                <div id="games-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Game cards will be dynamically inserted here -->
                 </div>
             </div>
         </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap justify-between">
+                    <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                        <h2 class="text-xl font-semibold mb-4">About FreeCasualGame.com</h2>
+                        <p class="text-gray-300">FreeCasualGame.com offers thousands of free online games for all ages. Play action, racing, sports, and other fun games for free.</p>
+                    </div>
+                    <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                        <h2 class="text-xl font-semibold mb-4">Popular Categories</h2>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><a href="#" class="hover:text-blue-300 transition-colors">Action Games</a></li>
+                            <li><a href="#" class="hover:text-blue-300 transition-colors">Racing Games</a></li>
+                            <li><a href="#" class="hover:text-blue-300 transition-colors">Puzzle Games</a></li>
+                            <li><a href="#" class="hover:text-blue-300 transition-colors">Multiplayer Games</a></li>
+                        </ul>
+                    </div>
+                    <div class="w-full md:w-1/3">
+                        <h2 class="text-xl font-semibold mb-4">Connect With Us</h2>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                    <p>&copy; 2023 FreeCasualGame.com. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     </div>
 
-    <!-- 游戏模态框 -->
-    <div id="game-modal" class="fixed inset-0 z-50 hidden">
-        <div class="modal-overlay absolute inset-0"></div>
-        <div class="absolute inset-0 flex items-center justify-center p-4">
-            <div class="bg-white rounded-xl w-full max-w-4xl max-h-[90vh] overflow-hidden">
-                <div class="flex justify-between items-center p-4 border-b">
-                    <h3 id="modal-title" class="text-xl font-bold">Game Title</h3>
-                    <button id="close-modal" class="text-gray-500 hover:text-gray-800">
-                        <i class="fas fa-times text-2xl"></i>
-                    </button>
-                </div>
-                <div class="p-4">
-                    <div id="game-frame" class="w-full h-[70vh] bg-gray-100 rounded-lg overflow-hidden">
-                        <!-- iframe 将在这里加载 -->
+    <!-- Game template for JS -->
+    <template id="game-card-template">
+        <div class="game-card bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg hover:scale-105" data-id="">
+            <div class="relative game-image-container">
+                <img src="" alt="" class="w-full h-48 object-cover">
+                <div class="game-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 transition-opacity flex flex-col justify-center p-4 text-white">
+                    <h3 class="text-lg font-semibold mb-2"></h3>
+                    <p class="text-sm mb-4 overflow-hidden game-description"></p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="game-tag text-xs bg-blue-600 px-2 py-1 rounded-full"></span>
                     </div>
                 </div>
             </div>
+            <div class="p-4 flex justify-between items-center">
+                <h3 class="game-title text-lg font-semibold text-gray-800"></h3>
+                <a href="#" class="play-now-btn bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white px-4 py-2 rounded-full font-medium transition-colors">Play Now</a>
+            </div>
         </div>
-    </div>
+    </template>
 
-    <script>
-        // DOM元素
-        const gamesContainer = document.getElementById('games-container');
-        const categoryButtons = document.querySelectorAll('.category-btn');
-        const searchInput = document.getElementById('search-input');
-        const gameModal = document.getElementById('game-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const gameFrame = document.getElementById('game-frame');
-        const closeModal = document.getElementById('close-modal');
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const sidebar = document.getElementById('sidebar');
-        const sidebarOverlay = document.getElementById('sidebar-overlay');
-
-        // 游戏数据路径
-        const GAMES_DATA_URL = 'data/games.json';
-
-        // 渲染游戏卡片
-        function renderGames(gamesArray) {
-            gamesContainer.innerHTML = '';
-            
-            if (gamesArray.length === 0) {
-                gamesContainer.innerHTML = `
-                    <div class="col-span-4 text-center py-12">
-                        <i class="fas fa-gamepad text-gray-300 text-5xl mb-4"></i>
-                        <h3 class="text-xl font-semibold text-gray-700">No games found</h3>
-                        <p class="text-gray-500 mt-2">Try a different search or category</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            gamesArray.forEach(game => {
-                const tagsHTML = game.tags.map(tag => 
-                    `<span class="tag">${tag}</span>`
-                ).join('');
-                
-                const card = document.createElement('div');
-                card.className = 'game-card bg-white rounded-xl shadow overflow-hidden relative';
-                card.innerHTML = `
-                    <div class="game-image-container">
-                        <img src="${game.image}" alt="${game.title}" class="game-image" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x192/0071e3/ffffff?text=Game+Image'">
-                        <div class="popular-badge">
-                            ${game.popularity}% Popular
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-1">${game.title}</h3>
-                        <div class="flex flex-wrap mb-2">
-                            ${tagsHTML}
-                        </div>
-                        <div class="flex justify-between items-center mt-3">
-                            <span class="text-xs px-2 py-1 bg-gray-100 rounded-full">${game.category}</span>
-                            <button class="play-btn bg-primary text-white px-4 py-2 rounded-full" data-id="${game.id}">
-                                Play Now
-                            </button>
-                        </div>
-                    </div>
-                    <div class="game-description absolute bottom-16 left-0 right-0 bg-white p-4 rounded-lg shadow-lg mx-4">
-                        <p class="text-sm text-gray-600 mb-2">${game.description}</p>
-                        <div class="flex flex-wrap">
-                            ${tagsHTML}
-                        </div>
-                    </div>
-                `;
-                gamesContainer.appendChild(card);
-            });
-            
-            // 添加播放按钮事件
-            document.querySelectorAll('.play-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const gameId = e.target.getAttribute('data-id');
-                    openGameModal(gameId);
-                });
-            });
-        }
-
-        // 打开游戏模态框
-        function openGameModal(gameId) {
-            fetch(GAMES_DATA_URL)
-                .then(response => response.json())
-                .then(games => {
-                    const game = games.find(g => g.id == gameId);
-                    if (game) {
-                        modalTitle.textContent = game.title;
-                        gameFrame.innerHTML = `<iframe src="${game.iframe}" style="width: 100%; height: 100%;" frameborder="0" allow="gamepad *;"></iframe>`;
-                        gameModal.classList.remove('hidden');
-                        document.body.style.overflow = 'hidden';
-                    }
-                });
-        }
-
-        // 关闭游戏模态框
-        function closeGameModal() {
-            gameModal.classList.add('hidden');
-            gameFrame.innerHTML = '';
-            document.body.style.overflow = 'auto';
-        }
-
-        // 分类过滤
-        function filterGames(games, category, searchTerm = '') {
-            let filteredGames = games;
-            
-            if (category !== 'all') {
-                filteredGames = filteredGames.filter(game => game.category === category);
-            }
-            
-            if (searchTerm) {
-                const term = searchTerm.toLowerCase();
-                filteredGames = filteredGames.filter(game => 
-                    game.title.toLowerCase().includes(term) || 
-                    game.description.toLowerCase().includes(term) ||
-                    game.tags.some(tag => tag.toLowerCase().includes(term))
-                );
-            }
-            
-            renderGames(filteredGames);
-        }
-
-        // 初始化游戏数据
-        function initGameData() {
-            fetch(GAMES_DATA_URL)
-                .then(response => response.json())
-                .then(games => {
-                    // 初始化渲染
-                    renderGames(games);
-                    
-                    // 事件监听器
-                    categoryButtons.forEach(button => {
-                        button.addEventListener('click', () => {
-                            // 更新活动按钮
-                            categoryButtons.forEach(btn => btn.classList.remove('ring-2', 'ring-white', 'ring-offset-2'));
-                            button.classList.add('ring-2', 'ring-white', 'ring-offset-2');
-                            
-                            // 过滤游戏
-                            const category = button.getAttribute('data-category');
-                            filterGames(games, category, searchInput.value);
-                            
-                            // 在移动端点击分类后关闭侧边栏
-                            sidebar.classList.remove('active');
-                            sidebarOverlay.classList.remove('active');
-                        });
-                    });
-
-                    searchInput.addEventListener('input', () => {
-                        const activeCategory = document.querySelector('.category-btn.ring-2')?.getAttribute('data-category') || 'all';
-                        filterGames(games, activeCategory, searchInput.value);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error loading game data:', error);
-                    gamesContainer.innerHTML = `
-                        <div class="col-span-4 text-center py-12">
-                            <i class="fas fa-exclamation-triangle text-red-500 text-5xl mb-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-700">Failed to load games</h3>
-                            <p class="text-gray-500 mt-2">Please try again later</p>
-                            <button id="retry-load" class="mt-4 bg-primary text-white px-4 py-2 rounded-full">Retry</button>
-                        </div>
-                    `;
-                    document.getElementById('retry-load').addEventListener('click', initGameData);
-                });
-        }
-
-        // 事件监听器
-        closeModal.addEventListener('click', closeGameModal);
-        gameModal.addEventListener('click', (e) => {
-            if (e.target === gameModal || e.target.classList.contains('modal-overlay')) {
-                closeGameModal();
-            }
-        });
-
-        mobileMenuBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-            sidebarOverlay.classList.toggle('active');
-        });
-
-        sidebarOverlay.addEventListener('click', () => {
-            sidebar.classList.remove('active');
-            sidebarOverlay.classList.remove('active');
-        });
-
-        // 初始化页面
-        initGameData();
-    </script>
+    <script src="js/games.js"></script>
+    <script src="js/main.js"></script>
 </body>
-</html>
+</html> 
