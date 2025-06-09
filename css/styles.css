@@ -1,1 +1,258 @@
+/* Main Styles for Online Games Website */
 
+/* Apple-inspired color variables */
+:root {
+    --apple-blue: #0071e3;
+    --apple-dark-blue: #0058a9;
+    --apple-light-blue: #42a5f5;
+    --apple-gray: #f5f5f7;
+    --apple-dark-gray: #333336;
+    --apple-green: #4cd964;
+    --apple-red: #ff3b30;
+    --apple-orange: #ff9500;
+    --apple-yellow: #ffcc00;
+}
+
+/* Custom scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Global Styles */
+body {
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Button hover effects */
+.btn-hover-effect {
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-hover-effect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Game card animations */
+.game-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.game-image-container {
+    overflow: hidden;
+}
+
+.game-image-container img {
+    transition: transform 0.5s ease;
+}
+
+.game-card:hover .game-image-container img {
+    transform: scale(1.05);
+}
+
+.game-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.game-card:hover .game-overlay {
+    opacity: 1;
+}
+
+/* Category link active state */
+.category-link.active {
+    background-color: var(--apple-blue);
+    color: white;
+}
+
+/* Play button pulse effect */
+.play-now-btn {
+    position: relative;
+    z-index: 1;
+}
+
+.play-now-btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 9999px;
+    background: linear-gradient(to right, var(--apple-green), var(--apple-blue));
+    z-index: -1;
+    transition: opacity 0.3s;
+    opacity: 0.8;
+}
+
+.play-now-btn:hover::after {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+/* Search box animation */
+.search-container input {
+    transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+/* Game iframe responsive */
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Fullscreen button hover animation */
+#fullscreen-btn {
+    transition: all 0.3s ease;
+}
+
+#fullscreen-btn:hover {
+    color: var(--apple-dark-blue);
+    transform: scale(1.05);
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .game-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .search-container {
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
+
+/* Loading spinner animation */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--apple-blue);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animations for page transitions */
+.page-transition {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Game tag styles */
+.game-tag {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--apple-blue), var(--apple-light-blue));
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.game-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Rating stars animation */
+.rating-star {
+    transition: all 0.3s ease;
+}
+
+.rating-container:hover .rating-star {
+    transform: scale(1.1);
+}
+
+/* Custom animations */
+.bounce-in {
+    animation: bounceIn 0.6s ease;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Apple-like focus styles */
+button:focus, a:focus, input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.5);
+    border-radius: 5px;
+} 
