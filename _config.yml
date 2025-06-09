@@ -1,0 +1,9 @@
+defaults:
+  - scope:
+      path: "js"
+    values:
+      content_type: "application/javascript"
+  - scope:
+      path: "css"
+    values:
+      content_type: "text/css" 
