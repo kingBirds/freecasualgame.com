@@ -14,46 +14,63 @@
     <div class="min-h-screen flex flex-col">
         <!-- Header Section -->
         <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg">
-            <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between">
-                <div class="flex items-center mb-4 md:mb-0">
-                    <img src="images/logo.svg" alt="FreeCasualGame.com Logo" class="h-10 mr-3">
-                    <span class="text-2xl font-bold">FreeCasualGame.com</span>
-                </div>
-                
-                <div class="w-full md:w-1/2 mb-4 md:mb-0">
-                    <h2 class="text-center text-xl font-semibold mb-3">Play Thousands of Free Online Games</h2>
-                    <div class="relative">
-                        <input type="text" placeholder="Search games..." class="w-full py-2 px-4 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                        <button class="absolute right-0 top-0 mt-2 mr-4 text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </button>
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <img src="images/logo.svg" alt="FreeCasualGame.com Logo" class="h-8 md:h-10 mr-3">
+                        <span class="text-xl md:text-2xl font-bold">FreeCasualGame.com</span>
                     </div>
-                </div>
-                
-                <div class="relative">
-                    <select class="appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400">
-                        <option value="en">English</option>
-                        <option value="es">Español</option>
-                        <option value="fr">Français</option>
-                        <option value="de">Deutsch</option>
-                        <option value="zh">中文</option>
-                    </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                        </svg>
+                    
+                    <div class="w-full md:w-1/2 mb-4 md:mb-0">
+                        <h2 class="text-center text-lg md:text-xl font-semibold mb-3 hidden md:block">Play Thousands of Free Online Games</h2>
+                        <div class="relative">
+                            <input type="text" placeholder="Search games..." class="w-full py-2 px-4 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                            <button class="absolute right-0 top-0 mt-2 mr-4 text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="relative mt-3 md:mt-0">
+                        <select class="appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                            <option value="de">Deutsch</option>
+                            <option value="zh">中文</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
 
         <!-- Main Content -->
-        <main class="flex-grow container mx-auto px-4 py-8 flex flex-col md:flex-row">
-            <!-- Sidebar Categories -->
-            <aside class="w-full md:w-1/5 bg-white rounded-lg shadow-md p-4 mb-6 md:mb-0 md:mr-6">
-                <h2 class="text-lg font-semibold mb-4 text-gray-800 border-b pb-2">Game Categories</h2>
+        <main class="flex-grow container mx-auto px-4 py-8 flex flex-col md:flex-row relative">
+            <!-- Sidebar Toggle Button (visible on mobile and tablet) -->
+            <button id="sidebar-toggle" class="fixed left-0 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-r-lg shadow-lg z-20 md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            
+            <!-- Sidebar Categories (hidden by default on mobile) -->
+            <aside id="sidebar" class="w-full md:w-1/5 bg-white rounded-lg shadow-md p-4 mb-6 md:mb-0 md:mr-6 transform -translate-x-full md:translate-x-0 fixed md:relative left-0 top-0 h-full md:h-auto z-10 transition-transform duration-300 ease-in-out overflow-y-auto">
+                <div class="flex justify-between items-center md:hidden mb-4">
+                    <h2 class="text-lg font-semibold text-gray-800">Game Categories</h2>
+                    <button id="close-sidebar" class="text-gray-500 hover:text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <h2 class="text-lg font-semibold mb-4 text-gray-800 border-b pb-2 hidden md:block">Game Categories</h2>
                 <nav class="space-y-2">
                     <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="all">All Games</a>
                     <a href="#" class="category-link block px-3 py-2 rounded-md hover:bg-blue-100 transition-colors" data-category="action">Action Games</a>
@@ -71,12 +88,15 @@
                 </nav>
             </aside>
 
+            <!-- Overlay for sidebar (mobile only) -->
+            <div id="sidebar-overlay" class="fixed inset-0 bg-black opacity-50 z-0 hidden md:hidden"></div>
+
             <!-- Game Grid -->
             <div class="w-full md:w-4/5">
                 <div class="flex justify-between items-center mb-6">
                     <h1 class="text-3xl font-bold text-gray-800">Featured Games</h1>
                     <div class="flex items-center">
-                        <span class="mr-2 text-gray-700">Sort by:</span>
+                        <span class="mr-2 text-gray-700 hidden sm:inline">Sort by:</span>
                         <select id="sort-options" class="bg-white border border-gray-300 rounded-md py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400">
                             <option value="rating">Top Rated</option>
                             <option value="title">A-Z</option>
@@ -84,7 +104,7 @@
                         </select>
                     </div>
                 </div>
-                <div id="games-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div id="games-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                     <!-- Game cards will be dynamically inserted here -->
                 </div>
             </div>
@@ -94,11 +114,11 @@
         <footer class="bg-gray-800 text-white py-8">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap justify-between">
-                    <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                    <div class="w-full sm:w-1/2 md:w-1/3 mb-6 md:mb-0">
                         <h2 class="text-xl font-semibold mb-4">About FreeCasualGame.com</h2>
                         <p class="text-gray-300">FreeCasualGame.com offers thousands of free online games for all ages. Play action, racing, sports, and other fun games for free.</p>
                     </div>
-                    <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                    <div class="w-full sm:w-1/2 md:w-1/3 mb-6 md:mb-0">
                         <h2 class="text-xl font-semibold mb-4">Popular Categories</h2>
                         <ul class="space-y-2 text-gray-300">
                             <li><a href="#" class="hover:text-blue-300 transition-colors">Action Games</a></li>
@@ -107,7 +127,7 @@
                             <li><a href="#" class="hover:text-blue-300 transition-colors">Multiplayer Games</a></li>
                         </ul>
                     </div>
-                    <div class="w-full md:w-1/3">
+                    <div class="w-full sm:w-full md:w-1/3 mt-6 sm:mt-6 md:mt-0">
                         <h2 class="text-xl font-semibold mb-4">Connect With Us</h2>
                         <div class="flex space-x-4">
                             <a href="#" class="text-gray-300 hover:text-white transition-colors">
@@ -139,18 +159,18 @@
     <template id="game-card-template">
         <div class="game-card bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg hover:scale-105" data-id="">
             <div class="relative game-image-container">
-                <img src="" alt="" class="w-full h-48 object-cover">
+                <img src="" alt="" class="w-full h-36 sm:h-40 md:h-48 object-cover">
                 <div class="game-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 transition-opacity flex flex-col justify-center p-4 text-white">
-                    <h3 class="text-lg font-semibold mb-2"></h3>
-                    <p class="text-sm mb-4 overflow-hidden game-description"></p>
+                    <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2"></h3>
+                    <p class="text-xs sm:text-sm mb-2 sm:mb-4 overflow-hidden game-description"></p>
                     <div class="flex flex-wrap gap-1">
                         <span class="game-tag text-xs bg-blue-600 px-2 py-1 rounded-full"></span>
                     </div>
                 </div>
             </div>
-            <div class="p-4 flex justify-between items-center">
-                <h3 class="game-title text-lg font-semibold text-gray-800"></h3>
-                <a href="#" class="play-now-btn bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white px-4 py-2 rounded-full font-medium transition-colors">Play Now</a>
+            <div class="p-3 sm:p-4 flex justify-between items-center">
+                <h3 class="game-title text-base sm:text-lg font-semibold text-gray-800 truncate max-w-[60%]"></h3>
+                <a href="#" class="play-now-btn bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors">Play Now</a>
             </div>
         </div>
     </template>
