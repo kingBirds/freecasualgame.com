@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "cursor-rules",
+			"path": "../cursor-rules"
+		}
+	],
+	"settings": {}
+}
